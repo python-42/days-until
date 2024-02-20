@@ -1,4 +1,3 @@
-Web client for Days Until, a small app which allows you to view countdowns until any given date. 
+Web client for Days Until, a small app which allows you to view countdowns until any given date.
 
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped using [Vite](https://vitejs.dev/guide/why.html)

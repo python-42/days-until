@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import Home from './pages/Home';
-import Days from "./pages/Days";
+import Home from './pages/Home.jsx';
+import Days from "./pages/Days.jsx";
 
 function App() {
     const [name, setName] = useState("");
