@@ -6,10 +6,8 @@ function DayView( {date, name} ) {
 
     useEffect(
         () => {
-            const interval = setInterval(
-                () => setNow(Date.now),
-                1000
-            )
+            const interval = setInterval(() => setNow(Date.now),1000)
+            return () => { clearInterval(interval); }
         },
         []
     );
@@ -40,6 +38,7 @@ function DayView( {date, name} ) {
             <p>Hours Away: {hoursAway(date)}</p>
             <p>Minutes Away: {minutesAway(date)}</p>
             <p>Seconds Away: {secondsAway(date) | 0}</p>
+            <button className="deleteBtn">Delete</button>
         </div>
     );
 }

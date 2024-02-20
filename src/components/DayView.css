@@ -9,9 +9,26 @@
     
     margin-left:  2.5vmin;
     margin-right: 2.5vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+p {
+    margin-top: 1vh;
+}
+
+hr {
+    width: 100%;
 }
 
 .past {
     color: darkgray;
     border-color: darkgray;
+}
+
+.deleteBtn {
+    color: red;
+    margin-top: auto;
+    align-self: center;
 }
