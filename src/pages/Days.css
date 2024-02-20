@@ -1,0 +1,13 @@
+.days {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+button {
+    margin-bottom: 2vh;
+    width: 10vw;
+    height: 4vh;
+    border-radius: 7px;
+    border-color: darkgray;
+}

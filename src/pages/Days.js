@@ -1,11 +1,30 @@
+import DayView from "../DayView.js";
+import "./Days.css";
+
 function Days({name, dayViewCallback}) {
     return (
-        <div className="days">
-            <h1>Days page fr fr</h1>
+        <div>
+            <h1>Your Days</h1>
             <p>Name: {name}</p>
             <button onClick={() => dayViewCallback(false)}>Return Home</button>
+
+            <div className="days">
+                {
+                    getDays()
+                }
+            </div>
         </div>
     );
+}
+
+function getDays() {
+    let rtn = [];
+    
+    for (let i = 0; i < 3; i++) {
+        rtn.push(<DayView date={new Date(new Date(2024, 1, 30))} />)
+    }
+
+    return rtn;
 }
 
 export default Days;
