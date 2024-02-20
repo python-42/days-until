@@ -6,8 +6,6 @@ function Home( {nameCallback, dayViewCallback} ) {
 
   function handleSubmission(event) {
     event.preventDefault();
-    console.log(nameCallback);
-    console.log(text);
     nameCallback(text);
     dayViewCallback(true);
   }
