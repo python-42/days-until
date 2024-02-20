@@ -1,12 +1,15 @@
 import { useState } from "react";
 import './Home.css';
 
-function Home() {
+function Home( {nameCallback, dayViewCallback} ) {
   const [text, setText] = useState("");
 
   function handleSubmission(event) {
     event.preventDefault();
+    console.log(nameCallback);
     console.log(text);
+    nameCallback(text);
+    dayViewCallback(true);
   }
   
   function handleChange(event) {

@@ -1,20 +1,21 @@
-import { Route, Routes } from "react-router";
-import { BrowserRouter } from "react-router-dom";
+import { useState } from "react";
 
 import Home from './pages/Home';
 import Days from "./pages/Days";
-import Error from "./pages/Error";
 
 function App() {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path= "/" element={<Home />} />
-                <Route path= "/days" element={<Days />} />
+    const [name, setName] = useState("");
+    const [viewDay, setViewDay] = useState(false);
 
-                <Route path = "*" element={<Error />} />
-            </Routes>
-        </BrowserRouter>
+    return (
+        <div>
+            {viewDay ?
+                <Days name={name} dayViewCallback={setViewDay} />
+                :
+                <Home nameCallback={setName} dayViewCallback={setViewDay} />            
+            }
+            
+        </div>
     );
 }
 
