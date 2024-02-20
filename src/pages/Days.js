@@ -1,4 +1,4 @@
-import DayView from "../DayView.js";
+import DayView from "../components/DayView.js";
 import "./Days.css";
 
 function Days({name, dayViewCallback}) {
