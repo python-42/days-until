@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './Home.css';
 
-function App() {
+function Home() {
   const [text, setText] = useState("");
 
   function handleSubmission(event) {
@@ -29,4 +29,4 @@ function App() {
 
 
 
-export default App;
+export default Home;

@@ -5,7 +5,7 @@ import './index.css';
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 
-import App from './Home';
+import Home from './Home';
 import Days from "./Days";
 import Error from "./Error";
 
@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
 
       <Routes>
-        <Route path= "/" element={<App />} />
+        <Route path= "/" element={<Home />} />
         <Route path= "/days" element={<Days />} />
 
         <Route path = "*" element={<Error />} />
