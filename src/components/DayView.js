@@ -31,8 +31,9 @@ function DayView( {date, name} ) {
     }
 
     return (
-        <div className="dayContainer">
+        <div className={minutesAway(date) > 0 ? "dayContainer" : "dayContainer past"} >
             <h3>{name}</h3>
+            {minutesAway(date) > 0 ? null : <p>Past</p>}
             <p>{date.toLocaleString()}</p>
             <hr />
             <p>Days Away: {daysAway(date)}</p>

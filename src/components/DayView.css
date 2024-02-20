@@ -2,10 +2,16 @@
     border-color: white;
     border-width: 1px;
     border-style: solid;
-    width: fit-content;
+    min-width: fit-content;
+    width: 12vw;
     height: 70vh;
     padding: 1vmin;
     
     margin-left:  2.5vmin;
     margin-right: 2.5vmin;
+}
+
+.past {
+    color: darkgray;
+    border-color: darkgray;
 }

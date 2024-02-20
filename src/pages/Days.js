@@ -20,9 +20,8 @@ function Days({name, dayViewCallback}) {
 function getDays() {
     let rtn = [];
     
-    for (let i = 0; i < 3; i++) {
-        rtn.push(<DayView date={new Date(2024, 1, 30)} name="Duluth" />)
-    }
+    rtn.push(<DayView date={new Date(2023, 1, 30)} name="Duluth" />);
+    rtn.push(<DayView date={new Date(2024, 1, 30)} name="La Crosse" />);
 
     return rtn;
 }
