@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './App.css';
+import './Home.css';
 
 function App() {
   const [text, setText] = useState("");
