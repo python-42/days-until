@@ -6,7 +6,10 @@ function Days({name, dayViewCallback}) {
         <div>
             <h1>Your Days</h1>
             <p>Name: {name}</p>
-            <button onClick={() => dayViewCallback(false)}>Return Home</button>
+            <div className="buttonContainer">
+                <button onClick={() => dayViewCallback(false)}>Return Home</button>
+                <button className="createBtn">Create</button>
+            </div>
 
             <div className="days">
                 {
