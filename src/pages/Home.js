@@ -15,13 +15,12 @@ function Home( {nameCallback, dayViewCallback} ) {
   }
 
   return (
-    <div className="App">
+    <div className="Home">
       <h1>Days Until...</h1>
       <h2>Count down the number of days until something at a glance.</h2>
 
       <form onSubmit={handleSubmission}>
         <label htmlFor="nameBox" >Enter your name</label>
-        <br/>
         <input placeholder="Name..." value={text} onChange={handleChange}/>
       </form>
     </div>

@@ -1,5 +1,5 @@
 .Home {
-  min-height: 80vh;
+  max-height: 80vh;
 
   display: flex;
   flex-direction: column;
@@ -7,8 +7,14 @@
   justify-content: center;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+
 label {
   font-size: calc(10px + 1.5vmin);
+  margin-bottom: 1vh;
 }
 
 input {
