@@ -6,8 +6,26 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #282c34;
+
+  text-align: center;
+  color: white;
+}
+
+a {
+  font-size: calc(10px + 1vmin);
+  color:azure;
 }
 
 input {
   text-align: center;
+}
+
+h1 {
+  font-size: calc(10px + 8vmin);
+  margin: 0px;
+}
+
+h2 {
+  font-size: calc(10px + 1vmin);
+  margin-bottom: 8vmin;
 }
