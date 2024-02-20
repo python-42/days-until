@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./DayView.css"
 
-function DayView( {date} ) {
+function DayView( {date, name} ) {
     const [now, setNow] = useState(Date.now());
 
     useEffect(
@@ -32,7 +32,9 @@ function DayView( {date} ) {
 
     return (
         <div className="dayContainer">
+            <h3>{name}</h3>
             <p>{date.toLocaleString()}</p>
+            <hr />
             <p>Days Away: {daysAway(date)}</p>
             <p>Hours Away: {hoursAway(date)}</p>
             <p>Minutes Away: {minutesAway(date)}</p>

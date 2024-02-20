@@ -21,7 +21,7 @@ function getDays() {
     let rtn = [];
     
     for (let i = 0; i < 3; i++) {
-        rtn.push(<DayView date={new Date(new Date(2024, 1, 30))} />)
+        rtn.push(<DayView date={new Date(2024, 1, 30)} name="Duluth" />)
     }
 
     return rtn;
