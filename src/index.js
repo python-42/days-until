@@ -5,9 +5,9 @@ import './index.css';
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 
-import Home from './Home';
-import Days from "./Days";
-import Error from "./Error";
+import Home from './pages/Home';
+import Days from "./pages/Days";
+import Error from "./pages/Error";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
