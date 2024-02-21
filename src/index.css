@@ -29,3 +29,7 @@ h2 {
   font-size: calc(10px + 1vmin);
   margin-bottom: 8vmin;
 }
+
+button {
+  min-height: 25px;
+}
