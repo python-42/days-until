@@ -1,9 +1,16 @@
 import { useEffect, useState } from "react";
 import DayView from "../components/DayView.jsx";
 import "./Days.css";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root")
 
 function Days({name, dayViewCallback}) {
     const [days, setDays] = useState(<p>Loading...</p>);
+    const [modalVisible, setModalVisibility] = useState(false);
+
+    const [dayName, setDayName] = useState("");
+    const [date, setDate] = useState(new Date());
 
     useEffect(() => {writeRequestToDOM(); }, []);
 
@@ -22,14 +29,43 @@ function Days({name, dayViewCallback}) {
         )
     }
 
+    function requestDaysWithDelay(delay) {
+        setDays(<p>Loading...</p>)
+        setTimeout(() => {
+            writeRequestToDOM();    
+        }, delay);
+    }
+
     function handleCreateButton() {
-        insert(name);
-        writeRequestToDOM();
+        setModalVisibility(true);
     } 
 
     function deleteCallback(name, dayName) {
         deleteDay(name, dayName);
-        writeRequestToDOM();
+        requestDaysWithDelay(100);
+    }
+
+    function handleSubmission(event) {
+        event.preventDefault();
+
+        setDayName(dayName.trim());
+        if (dayName === "") {
+            alert("Day name may not be empty.")
+        }else {    
+            insert(name, dayName, Date.parse(date).valueOf());
+            setModalVisibility(false);
+            requestDaysWithDelay(100);
+            setDate("")
+            setDayName("")
+        }
+    }
+
+    function handleNameChange(event) {
+        setDayName(event.target.value);
+    }
+
+    function handleDateChange(event) {
+        setDate(event.target.value);
     }
 
     return (
@@ -40,6 +76,22 @@ function Days({name, dayViewCallback}) {
                 <button onClick={() => dayViewCallback(false)}>Return Home</button>
                 <button onClick={() => handleCreateButton()} className="createBtn">Create</button>
             </div>
+
+            <Modal isOpen={modalVisible} className="modal">
+                <div className="modalBody" >
+                    <h1>Create New Day</h1>
+                    <form className="modalForm" onSubmit={handleSubmission}>
+                        <label htmlFor="dayName">Day Name</label>
+                        <input className="formInput" name="dayName" value={dayName} onChange={handleNameChange} />
+
+                        <label htmlFor="dayDate">Date</label>
+                        <input className="formInput" name="dayName" type="datetime-local" value={date} onChange={handleDateChange} />
+
+                        <input className="formInput" type="submit" value="Create Day" />
+                    </form>
+                    <button onClick={() => setModalVisibility(false)}>Cancel</button>
+                </div>
+            </Modal>
 
             <div className="days">
                 {
@@ -55,13 +107,13 @@ async function request(name) {
     return await response.json();
 }
 
-async function insert(username) {
+async function insert(username, dayName, date) {
     const response = await fetch("http://127.0.0.1:8080/api/add", {
         method: "POST",
         body: JSON.stringify({
             username: username,
-            dayName: "New Day",
-            date: Date.now()
+            dayName: dayName,
+            date: date
         }),
         headers: {
             "Content-type" : "application/json; charset=UTF-8"

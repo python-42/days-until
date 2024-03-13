@@ -10,6 +10,34 @@
     margin-right: 5px;
     margin-left: 5px;
 }
+.modal {
+    background-color: #282c34;
+    width: 90vw;
+    height: 60vh;
+    position: absolute;
+    top: 10vh;
+    left: 5vw;
+    border-radius: 10px;
+}
+
+.modalForm {
+    border-style: solid;
+    border-color: darkgray;
+    border-radius: 7px;
+    border-width: 2px;
+    margin-bottom: 2vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    padding: 1vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formInput {
+    margin-bottom: 2vh;
+}
 
 button {
     margin-bottom: 2vh;
