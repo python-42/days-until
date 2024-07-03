@@ -5,7 +5,7 @@ import Modal from "react-modal";
 
 Modal.setAppElement("#root")
 
-const SERVER_IP = "72.128.74.4";
+const SERVER_IP = "https://python-42.xyz:8080";
 
 function Days({name, dayViewCallback}) {
     const [days, setDays] = useState(<p>Loading...</p>);
@@ -105,12 +105,12 @@ function Days({name, dayViewCallback}) {
 }
 
 async function request(name) {
-    const response = await fetch("http://" + SERVER_IP + ":8080/api/get?name=" + name)
+    const response = await fetch(SERVER_IP + "/api/get?name=" + name)
     return await response.json();
 }
 
 async function insert(username, dayName, date) {
-    const response = await fetch("http://"+ SERVER_IP +":8080/api/add", {
+    const response = await fetch(SERVER_IP +"/api/add", {
         method: "POST",
         body: JSON.stringify({
             username: username,
@@ -127,7 +127,7 @@ async function insert(username, dayName, date) {
 
 
 async function deleteDay(username, dayName) {
-    const response = await fetch("http://" + SERVER_IP + ":8080/api/delete", {
+    const response = await fetch(SERVER_IP + "/api/delete", {
         method: "POST",
         body: JSON.stringify({
             username: username,
